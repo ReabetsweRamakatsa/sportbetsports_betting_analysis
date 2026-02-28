@@ -4,9 +4,7 @@
 
 import pandas as pd
 
-# ---------------------------------------------------------
 # LOAD DATA
-# ---------------------------------------------------------
 
 file_path = "South_Africa_Sports_Betting_Dataset.xlsx"
 
@@ -17,10 +15,7 @@ bets = pd.read_excel(file_path, sheet_name="bets")
 print("Data Loaded Successfully")
 print("-" * 50)
 
-
-# ---------------------------------------------------------
 # MERGE TABLES
-# ---------------------------------------------------------
 
 bets_events = bets.merge(events, on="event_id", how="left")
 full_df = bets_events.merge(users, on="user_id", how="left")
@@ -193,3 +188,4 @@ profit_by_bet_type.to_csv(
 )
 
 print("Tables saved in outputs/tables/")
+
